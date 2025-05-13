@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NovaSlider - Product Carousel</title>
+
+    <meta name="title" content="NovaSlider - Premium, Accessible & Interactive Product Carousel">
+    <meta name="description" content="Experience NovaSlider: A cutting-edge, touch-friendly, and highly accessible product card carousel component. Crafted with pure JavaScript and CSS for showcasing products with unparalleled smooth animations and rich, engaging features. A masterpiece by Uğur Toprakdeviren.">
+    <meta name="keywords" content="premium product carousel, accessible carousel, javascript carousel, css3 carousel, touch slider, responsive slider, vanilla js, interactive ui component, web development, frontend excellence, Uğur Toprakdeviren, toprakdeviren, NovaSlider, e-commerce component">
+    <meta name="author" content="Uğur Toprakdeviren">
+    <link rel="author" href="https://github.com/toprakdeviren">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://toprakdeviren.github.io/NovaSlider/">
+    <meta property="og:title" content="NovaSlider - Premium, Accessible & Interactive Product Carousel">
+    <meta property="og:description" content="Discover NovaSlider by Uğur Toprakdeviren: A state-of-the-art, touch-enabled, and universally accessible product carousel.">
+    <meta property="og:image" content="https://toprakdeviren.github.io/NovaSlider/novaslider-premium-preview.png">
+    <meta property="og:image:alt" content="A preview image of the NovaSlider product carousel showcasing multiple product cards with smooth transitions.">
+    <meta property="og:site_name" content="NovaSlider Showcase by Uğur Toprakdeviren">
+    <meta property="og:locale" content="en_US">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://toprakdeviren.github.io/NovaSlider/">
+    <meta property="twitter:title" content="NovaSlider - Premium, Accessible & Interactive Product Carousel">
+    <meta property="twitter:description" content="NovaSlider: Uğur Toprakdeviren's modern, touch-friendly, and accessible product card carousel component.">
+    <meta property="twitter:image" content="https://toprakdeviren.github.io/NovaSlider/novaslider-premium-preview.png">
+    <meta name="twitter:image:alt" content="NovaSlider: A visually appealing carousel of product cards.">
+    <meta name="twitter:creator" content="@toprakdevos">
+
+    <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+    <link rel="manifest" href="site.webmanifest">
+
+    <meta name="theme-color" content="#0052cc">
+    <meta name="color-scheme" content="light">
+
+    <link rel="stylesheet" href="card.css">
+</head>
+
+<body>
+    <main class="carousel-container" id="productCarousel" role="region" aria-labelledby="carouselHeading">
+        <h2 id="carouselHeading" class="visually-hidden">Featured Products Showcase - NovaSlider</h2>
+
+        <div class="loading-overlay" aria-hidden="true">
+            <div class="loader" role="status" aria-label="Loading featured products..."></div>
+        </div>
+
+        <div class="cards-wrapper" aria-live="polite"></div>
+
+        <button type="button" class="nav-arrow prev-arrow" aria-label="Previous Product Set"
+            aria-controls="productCarousel">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                stroke="currentColor" focusable="false" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+        </button>
+        <button type="button" class="nav-arrow next-arrow" aria-label="Next Product Set" aria-controls="productCarousel">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                stroke="currentColor" focusable="false" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+        </button>
+
+        <div class="pagination-dots" role="tablist" aria-label="Product Set Navigation"></div>
+
+        <div class="progress-container" aria-hidden="true">
+            <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Carousel Progress"></div>
+        </div>
+
+        <div class="keyboard-hint" aria-hidden="true">
+            Use
+            <kbd class="key" title="Left Arrow Key">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" focusable="false" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                        clip-rule="evenodd" />
+                </svg>
+            </kbd>
+            and
+            <kbd class="key" title="Right Arrow Key">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" focusable="false" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                        clip-rule="evenodd" />
+                </svg>
+            </kbd>
+            to navigate
+        </div>
+    </main>
+    <div id="notification-anchor" aria-live="assertive" aria-atomic="true" style="position: fixed; z-index: 9999; bottom: 0; left: 0; width: 100%; display: flex; flex-direction: column; align-items: center; pointer-events: none;"></div>
+
+    <script src="card.js" defer></script>
+</body>
+
+</html>

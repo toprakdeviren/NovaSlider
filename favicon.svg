@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Ana logo arkaplanı -->
+  <circle cx="16" cy="16" r="15" fill="#0052cc"/>
+  
+  <!-- "N" harfi -->
+  <path d="M11 10v12h2V14l6 8h2V10h-2v8L13 10h-2z" fill="white"/>
+  
+  <!-- Carousel noktaları -->
+  <circle cx="10" cy="24" r="1.25" fill="white" opacity="0.8"/>
+  <circle cx="16" cy="24" r="1.25" fill="white"/>
+  <circle cx="22" cy="24" r="1.25" fill="white" opacity="0.8"/>
+</svg>
